@@ -1,0 +1,64 @@
+﻿@model InventarioPaginaWeb.Models.Inventario
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Crear</h1>
+
+<h4>Inventario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" asp-antiforgery="true">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdInventario" class="control-label"></label>
+                <input asp-for="IdInventario" class="form-control" />
+                <span asp-validation-for="IdInventario" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Fecha" class="control-label"></label>
+                <input asp-for="Fecha" class="form-control" />
+                <span asp-validation-for="Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RCliente" class="control-label"></label>
+                <input asp-for="RCliente" class="form-control" />
+                <span asp-validation-for="RCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RVerificador" class="control-label"></label>
+                <input asp-for="RVerificador" class="form-control" />
+                <span asp-validation-for="RVerificador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RRevision" class="control-label"></label>
+                <input asp-for="RRevision" class="form-control" />
+                <span asp-validation-for="RRevision" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RTipoRegistro" class="control-label"></label>
+                <input asp-for="RTipoRegistro" class="form-control" />
+                <span asp-validation-for="RTipoRegistro" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver al Inventario</a>
+</div>
+

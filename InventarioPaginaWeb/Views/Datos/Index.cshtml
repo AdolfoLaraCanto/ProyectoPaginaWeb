@@ -1,0 +1,91 @@
+﻿@model IEnumerable<InventarioPaginaWeb.Models.Datos>
+
+    <h1>Datos e Información</h1>
+
+    <p>
+        <a asp-action="Create"> Nuevo Dato |</a>
+        <a href="/Inventario/Index"> Regresar al Inventario |</a>
+        <a href="/Home/Index"> Regresar a Inicio |</a>
+        @*<a href="https://localhost:44389/Home/Index"> Regresar a Inicio |</a>*@
+
+        <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+
+        @if (TempData["message"] != null)
+        {
+            <div id="alert-div" class="alert alert-success alert-dismissible fade show">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>@TempData["message"]</strong>
+            </div>
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    setTimeout(function () {
+                        $("#alert-div").fadeTo(500, 0.5).slideUp("slow", function () {
+                            $(this).remove();
+                        })
+                    }, 3000);
+                });
+            </script>
+        }
+
+        <script type="text/javascript">
+
+        </script>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IdDatos)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Marca)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Modelo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NoSerie)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Descripcion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Observaciones)
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdDatos)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Marca)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Modelo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NoSerie)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Observaciones)
+                        </td>
+
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.IdDatos">Editar</a> |
+                            <a asp-action="Details" asp-route-id="@item.IdDatos">Detalles</a> |
+                            <a data-id="@item.IdDatos @item.Marca @item.Modelo @item.NoSerie @item.Descripcion @item.Observaciones" asp-action="Delete" asp-route-id="@item.IdDatos">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>

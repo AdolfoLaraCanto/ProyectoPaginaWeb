@@ -1,0 +1,47 @@
+﻿@model InventarioPaginaWeb.Models.DependenciaEntidad
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editar</h1>
+
+<h4>Dependencia/Entidad</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" asp-antiforgery="true">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdDependenciaEntidad" />
+            <div class="form-group">
+                <label asp-for="IdDependenciaEntidad" class="control-label"></label>
+                <input asp-for="IdDependenciaEntidad" class="form-control" />
+                <span asp-validation-for="IdDependenciaEntidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UbicacionSistema" class="control-label"></label>
+                <input asp-for="UbicacionSistema" class="form-control" />
+                <span asp-validation-for="UbicacionSistema" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UbicacionFisica" class="control-label"></label>
+                <input asp-for="UbicacionFisica" class="form-control" />
+                <span asp-validation-for="UbicacionFisica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Departamento" class="control-label"></label>
+                <input asp-for="Departamento" class="form-control" />
+                <span asp-validation-for="Departamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-warning" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver al listado</a>
+</div>
+

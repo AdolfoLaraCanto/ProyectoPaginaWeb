@@ -1,0 +1,77 @@
+﻿@model IEnumerable<InventarioPaginaWeb.Models.Encargado>
+
+    <h1>Encargado</h1>
+
+    <p>
+        <a asp-action="Create"> Nuevo Encargado |</a>
+        <a href="/Inventario/Index"> Regresar al Inventario |</a>
+        <a href="/Home/Index"> Regresar a Inicio |</a>
+
+        <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+
+        @if (TempData["message"] != null)
+        {
+            <div id="alert-div" class="alert alert-success alert-dismissible fade show">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>@TempData["message"]</strong>
+            </div>
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    setTimeout(function () {
+                        $("#alert-div").fadeTo(500, 0.5).slideUp("slow", function () {
+                            $(this).remove();
+                        })
+                    }, 3000);
+                });
+            </script>
+        }
+
+        <script type="text/javascript">
+
+        </script>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IdEncargado)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClaveEncargado)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Apellido)
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdEncargado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClaveEncargado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apellido)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdEncargado">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.IdEncargado">Detalles</a> |
+                        <a data-id="@item.IdEncargado @item.ClaveEncargado @item.Nombre @item.Apellido" asp-action="Delete" asp-route-id="@item.IdEncargado">Eliminar</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+
+        </table>

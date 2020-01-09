@@ -1,0 +1,181 @@
+﻿@model IEnumerable<InventarioPaginaWeb.Models.BigModel>
+
+    <h6>
+        <a href="/Home/Index"> <== Regresar a Inicio </a>
+    </h6>
+    <h6>
+        <a asp-action="Create">| Nuevo Elemento |</a>
+    </h6>
+    <h3>
+        <a href="/Encargado/Index"> Encargado |</a>
+        <a href="/Verificador/Index"> Verificador |</a>
+        <a href="/Revision/Index"> Revisión |</a>
+        <a href="/Motivo/Index"> Motivo |</a>
+        <a href="/TipoRegistro/Index"> Tipo Registro |</a>
+        <a href="/Datos/Index"> Datos e Información |</a>
+        <a href="/DependenciaEntidad/Index"> Dependencia/Entidad |</a>
+    </h3>
+    <h1>El Inventario</h1>
+
+<script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+
+@if (TempData["message"] != null)
+{
+<div id="alert-div" class="alert alert-success alert-dismissible fade show">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <strong>@TempData["message"]</strong>
+</div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                $("#alert-div").fadeTo(500, 0.5).slideUp("slow", function () {
+                    $(this).remove();
+                })
+            }, 3000);
+        });
+    </script>
+}
+
+<script type="text/javascript">
+
+</script>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdInventario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreEncargado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidoEncargado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreVerificador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidoVerificador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroReporte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionRevision)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Motivo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoRegistro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoSerie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionDatos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observaciones)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UbicacionFisica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UbicacionSistema)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdInventario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreEncargado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoEncargado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreVerificador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoVerificador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroReporte)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescripcionRevision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Motivo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoSerie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescripcionDatos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observaciones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UbicacionFisica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UbicacionSistema)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdInventario">Editar</a> 
+                <a asp-action="Details" asp-route-id="@item.IdInventario">Detalles</a> 
+                <a data-id="@item.IdInventario @item.Fecha @item.NombreEncargado @item.ApellidoEncargado @item.NombreVerificador @item.ApellidoVerificador @item.NumeroReporte 
+                   @item.DescripcionRevision @item.Motivo @item.TipoRegistro @item.Marca @item.Modelo @item.NoSerie @item.DescripcionDatos 
+                   @item.Observaciones @item.UbicacionFisica @item.UbicacionSistema @item.Departamento @item.Status " asp-action="Delete" asp-route-id="@item.IdInventario" id="deleteMe">Eliminar</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+

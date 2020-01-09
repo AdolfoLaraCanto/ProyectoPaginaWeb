@@ -1,0 +1,44 @@
+﻿@model InventarioPaginaWeb.Models.Revision
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Revisión</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdRevision)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdRevision)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NumReporte)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NumReporte)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RMotivo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RMotivo)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdRevision">Editar</a> |
+    <a asp-action="Index">Regresar al listado</a>
+</div>

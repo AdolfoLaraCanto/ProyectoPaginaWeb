@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+   
+    <div class="jumbotron">
+        <h1>Inventario del Inmobiliario Escolar.</h1>
+        <p class="lead">Aqui se podrá revisar, modificar o eliminar datos/información no solo del inmobiliario, sino tambien de los encargados y de los verificadores.</p>
+        <p class="lead"> Además de el contenido e Información como su ubicacion y en donde se encuentra del inmueble o aparato electronico que se dío de alta en el sistema </p>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Checar/Revisar
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="/Inventario/Index">Inventario</a>
+            <a class="dropdown-item" href="/Encargado/Index">Encargado</a>
+            <a class="dropdown-item" href="/Verificador/Index">Verificador</a>
+            <a class="dropdown-item" href="/Revision/Index">Revisión</a>
+            <a class="dropdown-item" href="/Motivo/Index">Motivo</a>
+            <a class="dropdown-item" href="/TipoRegistro/Index">Tipo de Registro</a>
+            <a class="dropdown-item" href="/Datos/Index">Datos/Información</a>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>
+            <img class="btn btn-primary" href="/Inventario/Index" Height="304px" src="https://www.servidores-dedicados.com.mx/blog/wp-content/uploads/2016/02/Control-de-Inventario.jpg" Width="305px">
+        </h2>
+        <h2>
+            Ir a: 
+            <a class="btn btn-primary" href="/Inventario/Index"> Inventario </a>
+
+        </h2>
+        <p>
+            Aquí se mostrará toda la informacion del inventario.
+            Incluye empleados, encargados e información del inmobiliario escolar.
+        </p>
+        <p>
+            <a class="btn btn-secondary" href="/Inventario/Index"> Inventario &raquo;</a>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>
+            <img class="btn btn-primary" href="/Encargado/Index" Height="304px" src="https://img2.freepng.es/20180412/fee/kisspng-human-multitasking-businessperson-management-proje-thinking-man-5acfdf2e5959e2.784604051523572526366.jpg" Width="305px">
+        </h2>
+        <h2>
+            Ir a:
+            <a class="btn btn-primary" href="/Encargado/Index"> Encargado </a>
+        </h2>
+        <p>
+            Se mostrarán todos los datos de los encargados que deberan reportar alguna falla o problema en el inmobiliario escolar.
+        </p>
+        <p>
+            <a class="btn btn-secondary" href="/Encargado/Index"> Encargado &raquo;</a>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>
+            <img class="btn btn-primary" href="/Verificador/Index" Height="304px" src="https://labarta.es/wp-content/uploads/2017/12/mantenimiento-small.jpg" Width="305px" >
+        </h2>
+        <h2>
+            Ir a:
+            <a class="btn btn-primary" href="/Verificador/Index"> Verificador </a>
+        </h2>
+        <p>
+            Se mostrarán todos los datos de los verificadores que van a realizar dicho mantenimiento o reparación en el inmobiliario escolar.
+        </p>
+        <p>
+            <a class="btn btn-secondary" href="/Verificador/Index"> Verificador &raquo;</a>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+﻿@model InventarioPaginaWeb.Models.Motivo
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Motivo</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdMotivo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdMotivo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreMotivo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NombreMotivo)
+        </dd>
+
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdMotivo">Editar</a> |
+    <a asp-action="Index">Regresar al listado</a>
+</div>

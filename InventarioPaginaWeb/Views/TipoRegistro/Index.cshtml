@@ -1,0 +1,66 @@
+﻿@model IEnumerable<InventarioPaginaWeb.Models.TipoRegistro>
+
+    <h1>Tipo de Registro</h1>
+    <p>
+        <a asp-action="Create"> Nuevo Tipo de Registro |</a>
+        <a href="/Inventario/Index"> Regresar al Inventario |</a>
+        <a href="/Home/Index"> Regresar a Inicio |</a>
+    </p>
+
+<script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+
+@if (TempData["message"] != null)
+{
+    <div id="alert-div" class="alert alert-success alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>@TempData["message"]</strong>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                $("#alert-div").fadeTo(500, 0.5).slideUp("slow", function () {
+                    $(this).remove();
+                })
+            }, 3000);
+        });
+    </script>
+}
+
+<script type="text/javascript">
+
+</script>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdRegistro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoRegistro1)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoRegistro1)
+            </td>
+            
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdRegistro">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.IdRegistro">Detalles</a> |
+                <a data-id="@item.IdRegistro @item.TipoRegistro1 " asp-action="Delete" asp-route-id="@item.IdRegistro" id="deleteMe">Eliminar</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>

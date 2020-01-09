@@ -1,0 +1,40 @@
+﻿@model InventarioPaginaWeb.Models.TipoRegistro
+
+<h2>Eliminar</h2>
+
+<h3>¿Estas seguro que quieres eliminar este elemento?</h3>
+<div>
+    <h4>Detalles del Tipo de Registro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdRegistro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdRegistro)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoRegistro1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TipoRegistro1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RDatos)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RDatos)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+<div class="form-group">
+    <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+    @Html.ActionLink("Volver a la lista", "Index")
+</div>
+    }
+</div>

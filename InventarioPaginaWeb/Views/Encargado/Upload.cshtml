@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Upload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Upload</h2>
+
+<div class="row">
+    <form method="post" enctype="multipart/form-data" asp-controller="Revision" asp-action="Upload" asp-antiforgery="true">
+        <div class="form-group">
+            <div class="col-md-10">
+                <p>Upload one or more files using this form:</p>
+                <input id="file" type="file" name="file" accept="image/x-png,image/gif,image/jpeg" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" value="Upload" />
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

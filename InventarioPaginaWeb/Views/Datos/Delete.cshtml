@@ -1,0 +1,62 @@
+﻿@model InventarioPaginaWeb.Models.Datos
+
+<h2>Eliminar</h2>
+
+<h3>¿Estas seguro que quieres eliminar este elemento?</h3>
+<div>
+    <h4>Detalles de los datos e informacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdDatos)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdDatos)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Marca)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Marca)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Modelo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Modelo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NoSerie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NoSerie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Observaciones)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Observaciones)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RDependenciaEntidad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RDependenciaEntidad)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+<div class="form-group">
+    <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+    @Html.ActionLink("Volver a la lista", "Index")
+</div>
+    }
+</div>
